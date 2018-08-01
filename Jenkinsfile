@@ -5,12 +5,12 @@ node {
     git credentialsId: 'Github-ID', url: 'https://github.com/pavants52/SonarQube-pipelines.git'
    }
    stage('Build') {
-     withMaven(jdk: 'JDK-1.8.0_171', maven: 'Maven-3.5.3') {
+     withMaven(jdk: 'Java', maven: 'maven') {
        sh 'mvn clean compile'
      }
    }
    stage('Unit Test') {
-     withMaven(jdk: 'JDK-1.8.0_171', maven: 'Maven-3.5.3') {
+     withMaven(jdk: 'Java', maven: 'maven') {
        sh 'mvn test'
      }
    }
@@ -36,7 +36,7 @@ node {
      // }
    
     stage('Archival') {
-      withMaven(jdk: 'JDK-1.8.0_171', maven: 'Maven-3.5.3') {
+      withMaven(jdk: 'Java', maven: 'maven') {
        //sh 'mvn package'
      }
    }
