@@ -14,17 +14,17 @@ node {
        sh 'mvn test'
      }
    }
-/*   stage('SonarQube Analysis') {
-      //def job = build job: 'SonarJob'
-      //withSonarQubeEnv("SonarQube") {
-      //}
-      withMaven(jdk: 'JDK-1.8.151', maven: 'Maven-3.5.3') {
+  stage('SonarQube Analysis') {
+      def job = build job: 'SonarJob'
+      withSonarQubeEnv("SonarQube") {
+      }
+      withMaven(jdk: 'Java', maven: 'maven') {
           sh ' mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
              ' -Dsonar.host.url=https://sonarcloud.io ' +
-             ' -Dsonar.organization=pattabhi '+ 
-             ' -Dsonar.login=df5bb81bae9ba310d6a38135b957227ba6ecd32c '
+             ' -Dsonar.organization=pavants52 '+ 
+             ' -Dsonar.login=2eb6424b017f76ec050f6085eb95e2877f3b5ed5 '
           }
-      } */
+      } 
    
     //stage("Quality Gate"){
           //timeout(time: 1, unit: 'HOURS') {
