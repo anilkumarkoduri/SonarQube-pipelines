@@ -19,12 +19,12 @@ node {
      // withSonarQubeEnv("SonarQube") {
     //  }
       withMaven(jdk: 'Java', maven: 'maven') {
-          sh ' mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
-             ' -Dsonar.host.url=https://sonarcloud.io ' +
-             ' -Dsonar.organization=pavants52 '+ 
-             ' -Dsonar.login=2eb6424b017f76ec050f6085eb95e2877f3b5ed5 '
+          mvn sonar:sonar \
+            -Dsonar.organization=pavants52-github \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=2eb6424b017f76ec050f6085eb95e2877f3b5ed5
           }
-      } 
+      }  
    
     //stage("Quality Gate"){
           //timeout(time: 1, unit: 'HOURS') {
