@@ -15,8 +15,8 @@ node {
      }
    }
   stage('SonarQube Analysis') {
-      def job = build job: 'SonarJob'
-      withSonarQubeEnv("SonarQube") {
+     // def job = build job: 'SonarJob'
+     // withSonarQubeEnv("SonarQube") {
       }
       withMaven(jdk: 'Java', maven: 'maven') {
           sh ' mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
