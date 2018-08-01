@@ -20,8 +20,8 @@ node {
     //  }
       withMaven(jdk: 'Java', maven: 'maven') {
           mvn sonar:sonar \
-            -Dsonar.organization=pavants52-github \
-            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.organization=pavants52-github 
+            -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.login=2eb6424b017f76ec050f6085eb95e2877f3b5ed5
           }
       }  
